@@ -1,0 +1,26 @@
+#main {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+}
+
+.navi {
+	bottom: 0;
+	float: right;
+	height: 50vh;
+	position: relative;
+	right: 10px;
+	z-index: 50;
+}
+
+.navi ul {
+	list-style-type: none;
+}
+
+.roulette {
+	height: 200px;
+	width: 200px;
+}

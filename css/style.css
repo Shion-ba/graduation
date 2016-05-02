@@ -1,0 +1,19 @@
+#main {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+}
+
+.navi {
+	border: solid 1px #fff;
+	height: 500px;
+	position: absolute;
+	z-index: 50;
+}
+
+.navi ul {
+	list-style-type: none;
+}

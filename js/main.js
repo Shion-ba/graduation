@@ -38,6 +38,18 @@ function init() {
   renderer.render( scene, camera );
 }
 
+function onWindowResize() {
+	windowWidth = $( window ).width();
+	windowHeight = $( window ).height();
+
+	camera.aspect = windowWidth / windowHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( windowWidth, windowHeight );
+}
+
 $( window ).load( function() {
 	init();
+
+	window.addEventListener( 'resize', onWindowResize, false );
 });

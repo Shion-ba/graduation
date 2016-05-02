@@ -7,11 +7,17 @@
 	z-index: 0;
 }
 
-.navi {
-	bottom: 0;
-	float: right;
-	height: 50vh;
+.mass {
+	border: solid 1px #fff;
 	position: relative;
+	width: 300px;
+	z-index: 50;
+}
+
+.navi {
+	bottom: 0%;
+	height: 50vh;
+	position: absolute;
 	right: 10px;
 	z-index: 50;
 }

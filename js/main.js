@@ -1,11 +1,12 @@
 var windowWidth = $( window ).width();
 var windowHeight = $( window ).height();
-var scene, camera, renderer, earth;
+var scene, camera, renderer, group, earth;
 
 function init() {
 	
 	// scene
 	scene = new THREE.Scene();
+	group = new THREE.Group();
 
 	// camera
 	var fov = 75;
@@ -17,23 +18,23 @@ function init() {
 	camera.position.z = 300;
 
 	var loader = new THREE.TextureLoader();
-	var texture = loader.load( "./images/hoge.png" );
+	var texture = loader.load( "./texture.png" );
 	var geometry = new THREE.SphereGeometry( 500 ); //500, 32, 32
-	var material;
-	loader.load( './images/hoge.png', function( texture ) {
-		material = new THREE.MeshLambertMaterial( { map: texture , color: 0xffffff} );
-	});
+	var material = new THREE.MeshLambertMaterial( { map: texture , color: 0xffffff} );
+	material.transparent = true;
 	earth = new THREE.Mesh( geometry, material );
-	scene.add(earth);
+	group.add(earth);
 
 	var light = new THREE.DirectionalLight(0xffffff,1);
 	light.position.set(0,100,30);
-	scene.add(light);
+	group.add(light);
 
 	renderer = new THREE.WebGLRenderer();
   renderer.setSize( windowWidth, windowHeight );
   renderer.setClearColor( new THREE.Color(0x3bdae2) );
   $( '#main' ).append( renderer.domElement );
+
+  scene.add(group);
 
   renderer.render( scene, camera );
 }

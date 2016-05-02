@@ -1,6 +1,6 @@
 var windowWidth = $( window ).width();
 var windowHeight = $( window ).height();
-var scene, camera, renderer;
+var scene, camera, renderer, earth;
 
 function init() {
 	
@@ -18,13 +18,13 @@ function init() {
 
 	var loader = new THREE.TextureLoader();
 	var texture = loader.load( "./images/hoge.png" );
-	var geometry = new THREE.SphereGeometry( 500, 32, 32 );
+	var geometry = new THREE.SphereGeometry( 500 ); //500, 32, 32
 	var material;
 	loader.load( './images/hoge.png', function( texture ) {
 		material = new THREE.MeshLambertMaterial( { map: texture , color: 0xffffff} );
 	});
-	var sphere = new THREE.Mesh( geometry, material );
-	scene.add(sphere);
+	earth = new THREE.Mesh( geometry, material );
+	scene.add(earth);
 
 	var light = new THREE.DirectionalLight(0xffffff,1);
 	light.position.set(0,100,30);
@@ -38,6 +38,13 @@ function init() {
   renderer.render( scene, camera );
 }
 
+function advance( num ) {
+	for ( var i = 0; i < num; i ++ ) {
+		
+	};
+}
+
+// 画面サイズ変わったら動くんやで
 function onWindowResize() {
 	windowWidth = $( window ).width();
 	windowHeight = $( window ).height();

@@ -8,12 +8,19 @@
 }
 
 .navi {
+	bottom: 0;
 	float: right;
-	height: 100vh;
+	height: 50vh;
 	position: relative;
+	right: 10px;
 	z-index: 50;
 }
 
 .navi ul {
 	list-style-type: none;
+}
+
+.roulette {
+	height: 200px;
+	width: 200px;
 }

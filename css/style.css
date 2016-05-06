@@ -1,3 +1,11 @@
+#modal{
+	background-color: #FFF;
+	height: 500px;
+	width: 700px;
+	z-index: 100;
+	position: absolute;
+	display: none;
+}
 #main {
 	height: 100%;
 	margin: 0;

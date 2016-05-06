@@ -16,7 +16,7 @@
 
 .navi {
 	bottom: 0%;
-	height: 50vh;
+	height: 80vh;
 	position: absolute;
 	right: 10px;
 	z-index: 50;
@@ -24,6 +24,11 @@
 
 .navi ul {
 	list-style-type: none;
+}
+
+.button {
+	height: 100px;
+	width: 100px;
 }
 
 .roulette {

@@ -14,13 +14,13 @@ function init() {
 	var near = 1;
 	var far = 1000;
 	camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
-	camera.position.y = 500;
-	camera.position.z = 300;
+	camera.position.y = 600;
+	camera.position.z = 1000;
 
 	var loader = new THREE.TextureLoader();
 	var texture = loader.load( "./texture.png" );
-	var geometry = new THREE.SphereGeometry( 500 ); //500, 32, 32
-	var material = new THREE.MeshLambertMaterial( { map: texture , color: 0xffffff} );
+	var geometry = new THREE.SphereGeometry( 1000, 32, 32 ); //500, 32, 32
+	var material = new THREE.MeshLambertMaterial( { color: 0x69f0ae } );
 	material.transparent = true;
 	earth = new THREE.Mesh( geometry, material );
 	group.add(earth);
@@ -37,12 +37,6 @@ function init() {
   scene.add(group);
 
   renderer.render( scene, camera );
-}
-
-function advance( num ) {
-	for ( var i = 0; i < num; i ++ ) {
-		
-	};
 }
 
 // 画面サイズ変わったら動くんやで

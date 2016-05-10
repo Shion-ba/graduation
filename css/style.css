@@ -1,5 +1,5 @@
 #modal{
-	background-color: #FFF;
+	background-color: rgba(0,0,0,0.75);
 	height: 500px;
 	width: 700px;
 	z-index: 100;
@@ -14,6 +14,15 @@
 	width: 100%;
 	z-index: 0;
 }
+
+#collection{
+	display: none;
+}
+
+#item{
+	display: block;
+}
+
 
 .mass {
 	border: solid 1px #fff;
@@ -43,3 +52,9 @@
 	height: 200px;
 	width: 200px;
 }
+
+.item{
+	height: 200px;
+	width: 200px;
+}
+

@@ -2,6 +2,7 @@ var windowWidth = $( window ).width();
 var windowHeight = $( window ).height();
 var scene, camera, renderer, group, earth;
 var update = false;
+var car_up = false;
 var mass = 50;
 
 function init() {
@@ -55,12 +56,15 @@ function init() {
 function advance(num) {
 
 	update = true;
+	car_up = true;
 
 	setTimeout(function() {
 		update = false;
 	} , num * 1000);
 
-	mass --;
+	mass = mass - num;
+
+	$('.mass').html("<p>残り" + mass + "マス</p>");
 
 }
 

@@ -1,17 +1,30 @@
 $(window).load(function() {
-	$(".button").click(
-		function (){
-			$("#modal").css("display","block");
-			console.log("navi");
+    item = true;
+	$(".button").click(function (){
+		$("#modal").css("display","block");
+		console.log("navi");
+	});	
+    
+    $(window).resize(modalResize());
+    
 
-		}
-	);	
-  $(window).resize(modalResize());
-     $(".change").click(
-            function(){
-                $("#modal").html("index.html","collection.html");
-                //たぶん違う。どうつりゃいいのか。ググり力が足りないのか。
-            });
+    $(".change").click(function(){
+        if(item){
+        $("#item").css("display","none");
+        $("#collection").css("display","block");
+        item = false;
+        }else{
+             $("#collection").css("display","none");
+        $("#item").css("display","block");
+        item = true;
+        }
+      
+    });
+
+
+
+
+
 	$(".close").click(
 		function (){
 		$("#modal").css("display","none");

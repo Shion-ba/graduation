@@ -70,8 +70,9 @@ function render() {
 
 	if (update) {
 		earth.rotation.x += 0.005;
-		renderer.render( scene, camera );
 	};
+
+	renderer.render( scene, camera );
 }
 
 // 画面サイズ変わったら動くんやで

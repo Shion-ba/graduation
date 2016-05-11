@@ -19,7 +19,8 @@
 	<!-- JavaScript -->
 	<script src="js/main.js"></script>
 	<script src="js/navi.js"></script>
-
+	<script src="js/roulette.js"></script>
+	<script src="js/item.js"></script>
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -27,28 +28,35 @@
 	<!-- modal -->
 	<div id="modal">
 		<div id="item">
-			<img src="images/ゲンガー.png" class="item">	
-			<img src="images/ゲンガー.png" class="item">	
-			<img src="images/ゲンガー.png" class="item">	
-			<img src="images/ゲンガー.png" class="item">	
-			<img src="images/ゲンガー.png" class="item">	
-			<img src="images/ゲンガー.png" class="item">	
+			<div class="item_image">
+				<img src="images/ゲンガー.png" class="item item_1">	
+				<img src="images/ゲンガー.png" class="item item_2">	
+				<img src="images/ゲンガー.png" class="item item_3">	
+				<img src="images/ゲンガー.png" class="item item_4">	
+				<img src="images/ゲンガー.png" class="item item_5">
+				<img src="images/ゲンガー.png" class="item item_6">
+			</div>
+			<div>
+				<button class="change mdl-button mdl-js-button mdl-button--raised mdl-button--accent">コレクション</button>
 
-			<button class="change mdl-button mdl-js-button mdl-button--raised mdl-button--accent">コレクション</button>
-
-			<button class="close mdl-button mdl-js-button mdl-button--raised mdl-button--accent">閉じる</button>
+				<button class="close mdl-button mdl-js-button mdl-button--raised mdl-button--accent">閉じる</button>
+			</div>
 		</div>
 
 		<div id="collection">
-			<img src="images/ゲンガー.png" class="collection">
-			<img src="images/ゲンガー.png" class="collection">
-			<img src="images/ゲンガー.png" class="collection">
-			<img src="images/ゲンガー.png" class="collection">
-			<img src="images/ゲンガー.png" class="collection">
-			<img src="images/ゲンガー.png" class="collection">
+			<div>
+				<img src="images/ゲンガー.png" class="collection collection_1">
+				<img src="images/ゲンガー.png" class="collection collection_2">
+				<img src="images/ゲンガー.png" class="collection collection_3">
+				<img src="images/ゲンガー.png" class="collection collection_4">
+				<img src="images/ゲンガー.png" class="collection collection_5">
+				<img src="images/ゲンガー.png" class="collection collection_6">
+			</div>
 
-			<button class="change mdl-button mdl-js-button mdl-button--raised mdl-button--accent">アイテム</button>
-			<button class="close mdl-button mdl-js-button mdl-button--raised mdl-button--accent">閉じる</button>
+			<div>
+				<button class="change mdl-button mdl-js-button mdl-button--raised mdl-button--accent">アイテム</button>
+				<button class="close mdl-button mdl-js-button mdl-button--raised mdl-button--accent">閉じる</button>
+			</div>
 		</div>
 	</div>
 
@@ -70,7 +78,7 @@
 				<img src="images/navi/map_b.png" class="button">
 			</li>
 			<li>
-				<img src="images/navi/roulette_b.png" class="roulette" onclick="advance(5)">
+				<img src="images/navi/roulette_b.png" class="roulette" onclick="roulette()">
 			</li>
 		</ul>
 	</div>

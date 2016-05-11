@@ -1,8 +1,8 @@
 $(window).load(function() {
     item = true;
 	$(".button").click(function (){
-		$("#modal").css("display","block");
-		console.log("navi");
+        $("#modal").fadeIn("fast");
+        $("#modal").css("display","block");
 	});	
     
     $(window).resize(modalResize());

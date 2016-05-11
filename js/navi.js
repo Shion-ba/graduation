@@ -28,6 +28,7 @@ $(window).load(function() {
 		$("#modal").css("display","none");
 		});
 });
+
         function modalResize(){
  
             var w = $(window).width();

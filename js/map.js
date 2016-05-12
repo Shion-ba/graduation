@@ -110,6 +110,10 @@ function spot ( mass ) {
 	displaySpotModal(spot);
 }
 
+function massEvent() {
+	ex_update = true;
+}
+
 function displaySpotModal(spot) {
 	$('.modal_kabotya').css('display','block');
   $('.modal_kabotya').load("templates/kabotya_spot.html", function() {
@@ -138,9 +142,9 @@ function action ( mass ) {
 	if ( mass < 1) {
 		displayGoal();
 	} else	if ( mass % 5 == 0) {
-		spot( mass );
+		massEvent();
 	} else if ( mass == 2 ) {
-		spot( mass );
+		massEvent();
 	} else {
 		console.log('なんでもないお');
 	}

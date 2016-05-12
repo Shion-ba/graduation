@@ -59,4 +59,5 @@ function displayModal() {
 
 function hideModal() {
     $(".modal_kabotya").css("display", "none");
+    exclamation.position.y = -200;
 }

@@ -18,7 +18,7 @@ spotContents = {
 		action: ""
 	},
 	"勝連城跡": {
-		img: "../images/spot/katsuren.jpg",
+		img: "./images/spot/katsuren.jpg",
 		msg: "「沖縄のお城って首里城だけじゃなくて、実は300以上も[グスク跡]があるといわれているんだって！城＝グスクは、グスク＝城ではないらしい…奥深いなあ！」",
 		action: ""
 	},
@@ -28,7 +28,7 @@ spotContents = {
 		action: ""
 	},
 	"美ら海水族館": {
-		img: "hoge",
+		img: "./images/spot/tyura.jpg",
 		msg: "「国内最大級のアクリル水槽！ジンベエザメは圧巻の迫力！ぬいぐるみ、買って帰ろうかなぁ…」",
 		action: ""
 	},
@@ -89,6 +89,10 @@ function spot ( mass ) {
 		case 2:
 			spot = spotArray[ 9 ];
 			break;
+		case 0:
+			displayGoal();
+			break;
+
 	}
 
 	displaySpotModal(spot);
@@ -102,8 +106,16 @@ function displaySpotModal(spot) {
   });
 }
 
+function displayGoal() {
+	$('.modal_kabotya').css('display', 'block');
+	$('.modal_kabotya').load("./templates/kabotya_goal.html");
+}
+
 function action ( mass ) {
-	if ( mass % 5 == 0) {
+
+	if ( mass < 1) {
+		displayGoal();
+	} else	if ( mass % 5 == 0) {
 		spot( mass );
 	} else if ( mass == 2 ) {
 		spot( mass );

@@ -1,8 +1,9 @@
 var windowWidth = $( window ).width();
 var windowHeight = $( window ).height();
-var scene, camera, renderer, group, earth, exclamation;
+var scene, camera, renderer, group, earth, exclamation, goal;
 var update = false;
 var ex_update = false;
+var g_update = false;
 var mass = 50;
 
 function init() {
@@ -11,6 +12,7 @@ function init() {
 	scene = new THREE.Scene();
 	group = new THREE.Group();
 	exclamation = new THREE.Group();
+	goal = new THREE.Group();
 
 	// camera
 	var fov = 75;
@@ -57,7 +59,20 @@ function init() {
 
 	group.add( exclamation );
 
-	var light = new THREE.AmbientLight	( 0xffffff, 1 ); //DirectionalLight
+	for (var i = 0; i < 20; i++) {
+		var g_geometry = new THREE.SphereGeometry(10 , 8, 8);
+		var g_material = new THREE.MeshLambertMaterial( { color: 0x20b2aa});
+		var g_mesh = new THREE.Mesh( g_geometry, g_material);
+		g_mesh.position.x = Math.random() * 500 -250;
+		g_mesh.position.y = Math.random() * 100 + 400;
+		g_mesh.position.z = Math.random() * 400;
+		goal.add(g_mesh);
+	}
+
+	group.add(goal);
+	goal.position.y = -200;
+
+	var light = new THREE.AmbientLight ( 0xffffff, 1 ); //DirectionalLight
 	light.position.set( 0, 100, 30 );
 	group.add( light );
 
@@ -102,6 +117,15 @@ function render() {
 		if (exclamation.position.y === 0) {
 			ex_update = false;
 			spot(mass);
+		};
+	};
+
+	if (g_update) {
+		goal.position.y += 15;
+		if (goal.position.y === 400) {
+			g_update = false;
+			displayGoal();
+			goal.position.y = -200;
 		};
 	};
 

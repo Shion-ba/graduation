@@ -5,8 +5,10 @@ $(window).load(function() {
         $("#modal").css("display","block");
 	});	
 
-    $(window).resize(modalResize());
-    
+    $(".button_map").click(function() {
+        displayModal()});
+
+    $(window).resize(modalResize());    
 
     $(".change").click(function(){
         if(item){
@@ -21,11 +23,10 @@ $(window).load(function() {
       
     });
 
-
-
 	$(".close").click(
 		function (){
 		$("#modal").css("display","none");
+        $(".modal_kabotya").css("display", "none");
 		});
 });
 
@@ -40,6 +41,11 @@ $(window).load(function() {
                 "left": ((w - cw)/2) + "px",
                 "top": ((h - ch)/2) + "px"
             });
+
+              $(".modal_kabotya").css({
+                "left": ((w - cw)/2) + "px",
+                "top": ((h - ch)/2) + "px"
+              });
         }
    
 

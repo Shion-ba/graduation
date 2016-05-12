@@ -24,9 +24,15 @@
 }
 
 .spot_contents_img {
-	border: solid 1px #000;
 	height: 300px;
+	text-align: center;
+	margin-top: 10px;
 	width: 700px;
+}
+
+.spot_contents_img img {
+	height: 300px;
+	width: 500px;
 }
 
 .spot_contents_text {

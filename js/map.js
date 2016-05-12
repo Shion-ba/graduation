@@ -3,22 +3,22 @@ spotArray = [ "平和記念公園", "斎場御嶽", "中村家住宅", "勝連�
 
 spotContents = {
 	"平和記念公園": {
-		img: "hoge",
+		img: "./images/spot/heiwa.png",
 		msg: "「戦争の悲惨さ、命の尊さを学べる場所だなぁ。なんだか涙が出てくるよ…。」",
 		action: ""
 	},
 	"斎場御嶽": {
-		img: "hoge",
+		img: "./images/spot/sefa.png",
 		msg: "「昔は、男子禁制の場所で王様さえ女装しないと入れなかったんだって！神聖な場所なんだね〜。」",
 		action: 4,
 	},
 	"中村家住宅": {
-		img: "hoge",
+		img: "./images/spot/nakamura.png",
 		msg: "「戦前の沖縄の住居建築の特色を全て備えているんだって！なんだか時間もゆっくり流れている気がする〜」",
 		action: ""
 	},
 	"勝連城跡": {
-		img: "hoge",
+		img: "../images/spot/katsuren.jpg",
 		msg: "「沖縄のお城って首里城だけじゃなくて、実は300以上も[グスク跡]があるといわれているんだって！城＝グスクは、グスク＝城ではないらしい…奥深いなあ！」",
 		action: ""
 	},
@@ -48,7 +48,7 @@ spotContents = {
 		action: ""
 	},
 	"首里城": {
-		img: "hoge",
+		img: "./images/spot/shuri.jpg",
 		msg: "「立派なお城だなぁ！沖縄らしい真っ赤な外観と中国風な作りが面白い！」",
 		action: ""
 	}
@@ -97,6 +97,7 @@ function spot ( mass ) {
 function displaySpotModal(spot) {
 	$('.modal_kabotya').css('display','block');
   $('.modal_kabotya').load("templates/kabotya_spot.html", function() {
+  	$('.spot_contents_img').html('<img src=\"' + spotContents[spot].img + '\" />');
 		$('.spot_contents_text').text(spotContents[spot].msg);
   });
 }

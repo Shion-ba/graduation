@@ -65,6 +65,7 @@ var spotContents = {
 };
 
 var gameCount = 1;
+var spotCount = 10;
 
 function spot ( mass ) {
 
@@ -72,7 +73,7 @@ function spot ( mass ) {
 
 	switch ( mass ) {
 		case 45:
-			spot = spotArray[ 0 ];
+			spot = spotArray[ 1 ];
 			break;
 		case 40:
 			spot = spotArray[ 1 ];
@@ -102,7 +103,6 @@ function spot ( mass ) {
 			spot = spotArray[ 9 ];
 			break;
 		case 0:
-			displayGoal();
 			break;
 
 	}
@@ -112,6 +112,10 @@ function spot ( mass ) {
 
 function massEvent() {
 	ex_update = true;
+}
+
+function goalEvent() {
+	g_update = true;
 }
 
 function displaySpotModal(spot) {
@@ -140,7 +144,7 @@ function gameContinue() {
 function action ( mass ) {
 
 	if ( mass < 1) {
-		displayGoal();
+		goalEvent();
 	} else	if ( mass % 5 == 0) {
 		massEvent();
 	} else if ( mass == 2 ) {

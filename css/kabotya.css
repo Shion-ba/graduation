@@ -46,6 +46,34 @@
 	width: 650px;
 }
 
+.event_contents {
+	height: 400px;
+	width: 700px;
+}
+
+.event_contents_img {
+	height: 300px;
+	text-align: center;
+	margin-top: 10px;
+	width: 700px;
+}
+
+.event_contents_img img {
+	height: 300px;
+	width: 300px;
+}
+
+.event_contents_text {
+	background-color: #eaeaff;
+	border: double 10px #ffc993;
+	border-radius: 30px;
+	height: 50px;
+	margin: 10px auto;
+	overflow: hidden;
+	padding: 10px;
+	width: 650px;
+}
+
 .goal_main {
 	border:solid 1px #f00;
 	height: 400px;

@@ -67,7 +67,7 @@ function advance(num) {
 
 	action( mass );
 
-	$('.mass').html("<p>残り" + mass + "マス</p>");
+	$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
 }
 
 function render() {

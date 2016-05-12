@@ -1,58 +1,70 @@
-spotArray = [ "平和記念公園", "斎場御嶽", "中村家住宅", "勝連城跡", 
+var spotArray = [ "平和記念公園", "斎場御嶽", "中村家住宅", "勝連城跡", 
 	"KING TACOS", "美ら海水族館", "パイナップルパーク", "むら咲むら", "玉陵", "首里城"];
 
-spotContents = {
+var spotContents = {
 	"平和記念公園": {
 		img: "./images/spot/heiwa.png",
 		msg: "「戦争の悲惨さ、命の尊さを学べる場所だなぁ。なんだか涙が出てくるよ…。」",
+		visited: false,
 		action: ""
 	},
 	"斎場御嶽": {
 		img: "./images/spot/sefa.png",
 		msg: "「昔は、男子禁制の場所で王様さえ女装しないと入れなかったんだって！神聖な場所なんだね〜。」",
-		action: 4,
+		visited: false,
+		action: 4
 	},
 	"中村家住宅": {
 		img: "./images/spot/nakamura.png",
 		msg: "「戦前の沖縄の住居建築の特色を全て備えているんだって！なんだか時間もゆっくり流れている気がする〜」",
+		visited: false,
 		action: ""
 	},
 	"勝連城跡": {
 		img: "./images/spot/katsuren.jpg",
 		msg: "「沖縄のお城って首里城だけじゃなくて、実は300以上も[グスク跡]があるといわれているんだって！城＝グスクは、グスク＝城ではないらしい…奥深いなあ！」",
+		visited: false,
 		action: ""
 	},
 	"KING TACOS": {
 		img: "hoge",
 		msg: "「こ、これは…結構ボリューミーなタコライス！定番はチーズ野菜！ほかにもハンバーガーや、[チキンバラバラ]なんてメニューもある。気になるなぁ。』",
+		visited: false,
 		action: ""
 	},
 	"美ら海水族館": {
 		img: "./images/spot/tyura.jpg",
 		msg: "「国内最大級のアクリル水槽！ジンベエザメは圧巻の迫力！ぬいぐるみ、買って帰ろうかなぁ…」",
+		visited: false,
 		action: ""
 	},
 	"パイナップルパーク": {
 		img: "hoge",
 		msg: "「パイナップルって木に実るのかと思っていたけど、下から生えてくるんだね！手でちぎって食べるスナックパインなんてあるんだ！甘酸っぱくておいしい！」",
+		visited: false,
 		action: ""
 	},
 	"むら咲むら": {
 		img: "hoge",
 		msg: "「沖縄の文化や伝統を体験できる場所！世界遺産や、焼物工房まであるんだ〜。全部回ってみようかな！」",
+		visited: false,
 		action: ""
 	},
 	"玉陵": {
 		img: "hoge",
 		msg: "「大きいなぁ…！琉球王国の王様のお墓なのか…和製のピラミッドみたいな感じかな？」",
+		visited: false,
 		action: ""
 	},
 	"首里城": {
 		img: "./images/spot/shuri.jpg",
 		msg: "「立派なお城だなぁ！沖縄らしい真っ赤な外観と中国風な作りが面白い！」",
+		visited: false,
 		action: ""
 	}
 };
+
+var gameCount = 1;
 
 function spot ( mass ) {
 
@@ -103,12 +115,22 @@ function displaySpotModal(spot) {
   $('.modal_kabotya').load("templates/kabotya_spot.html", function() {
   	$('.spot_contents_img').html('<img src=\"' + spotContents[spot].img + '\" />');
 		$('.spot_contents_text').text(spotContents[spot].msg);
+		if (!spotContents[spot].visited) {
+			spotContents[spot].visited = true;
+		};
   });
 }
 
 function displayGoal() {
 	$('.modal_kabotya').css('display', 'block');
 	$('.modal_kabotya').load("./templates/kabotya_goal.html");
+}
+
+function gameContinue() {
+	mass = 50;
+	gameCount ++;
+	$('.modal_kabotya').css('display', 'none');
+	$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
 }
 
 function action ( mass ) {

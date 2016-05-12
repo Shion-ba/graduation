@@ -4,7 +4,7 @@ $(window).load(function() {
         $("#modal").fadeIn("fast");
         $("#modal").css("display","block");
 	});	
-    
+
     $(window).resize(modalResize());
     
 
@@ -42,3 +42,9 @@ $(window).load(function() {
             });
         }
    
+
+
+//かぼちゃ追記部分です。
+function displayModal() {
+    $('.modal_kabotya').css('display','block');
+}

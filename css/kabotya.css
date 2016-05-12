@@ -18,6 +18,28 @@
 	width: 650px;
 }
 
+.spot_contents {
+	height: 400px;
+	width: 700px;
+}
+
+.spot_contents_img {
+	border: solid 1px #000;
+	height: 300px;
+	width: 700px;
+}
+
+.spot_contents_text {
+	background-color: #eaeaff;
+	border: double 10px #ffc993;
+	border-radius: 30px;
+	height: 50px;
+	margin: 10px auto;
+	overflow: hidden;
+	padding: 10px;
+	width: 650px;
+}
+
 .button_map {
 	height: 100px;
 	width: 100px;

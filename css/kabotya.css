@@ -46,6 +46,12 @@
 	width: 650px;
 }
 
+.goal_main {
+	border:solid 1px #f00;
+	height: 400px;
+	width: 700px;
+}
+
 .button_map {
 	height: 100px;
 	width: 100px;

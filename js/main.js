@@ -60,6 +60,11 @@ function advance(num) {
 	} , num * 1000);
 
 	mass = mass - num;
+	
+	if (mass < 0) {
+		mass = 0;
+	};
+
 	action( mass );
 
 	$('.mass').html("<p>残り" + mass + "マス</p>");

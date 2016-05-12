@@ -6,7 +6,8 @@ $(window).load(function() {
 	});	
 
     $(".button_map").click(function() {
-        displayModal()});
+        displayModal()
+    });
 
     $(window).resize(modalResize());    
 
@@ -26,7 +27,7 @@ $(window).load(function() {
 	$(".close").click(
 		function (){
 		$("#modal").css("display","none");
-        $(".modal_kabotya").css("display", "none");
+        
 		});
 });
 
@@ -53,4 +54,9 @@ $(window).load(function() {
 //かぼちゃ追記部分です。
 function displayModal() {
     $('.modal_kabotya').css('display','block');
+    $('.modal_kabotya').load("templates/kabotya_map.html");
+}
+
+function hideModal() {
+    $(".modal_kabotya").css("display", "none");
 }

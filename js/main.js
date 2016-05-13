@@ -19,7 +19,7 @@ function init() {
 	var aspect = windowWidth / windowHeight;
 	var near = 1;
 	var far = 1000;
-	camera = new THREE.PerspectiveCamera( fov, aspect, near, far ); //THREE.OrthographicCamera( windowWidth / -2, windowWidth / 2, windowHeight / 2, windowHeight / -2, 0.1 , 2000);
+	camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
 	camera.position.y = 400;
 	camera.position.z = 500; //500
 

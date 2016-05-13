@@ -91,7 +91,12 @@ $(window).load(function() {
 //かぼちゃ追記部分です。
 function displayModal() {
     $('.modal_kabotya').css('display','block');
-    $('.modal_kabotya').load("templates/kabotya_map.html");
+    $('.modal_kabotya').load("templates/kabotya_map.html", function() {
+
+    var positionT = $('.location_point').position().top;
+    var positionL = $('.location_point').position().left;
+    });
+
 }
 
 function hideModal() {

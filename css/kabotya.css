@@ -22,7 +22,8 @@
 
 .location_point {
 	height: 50px;
-	right: 500px;
+	margin-left: 120px;
+	margin-top: 280px;
 	width: 50px;
 }
 

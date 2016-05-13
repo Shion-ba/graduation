@@ -105,10 +105,6 @@ function advance(num) {
 	$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
 }
 
-function locationMap(mass) {
-	
-}
-
 function render() {
 	requestAnimationFrame( render );
 

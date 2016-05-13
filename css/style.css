@@ -104,3 +104,36 @@
 	background-color: #24d;
 	color: #fff;
 }
+
+.kwsk{
+	background-color: rgba(250,250,250,0.75);
+	height: 500px;
+	width: 700px;
+	z-index: 100;
+	position: absolute;
+	display: none;
+}
+
+.kwsk_header img{
+	height: 350px;
+	width: 350px;
+	border:solid #ffb6c1;
+	margin-left: 20%;
+}
+
+.kwsk_text{
+	margin:10px 5px 10px;
+	padding: 1em;
+	border: 3px solid #ccc;
+	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
+
+}
+
+.kwsk_menu{
+	font-weight:bold; 
+	height: 50px;
+	width: 100px;
+	}
+
+    
+}

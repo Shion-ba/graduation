@@ -23,7 +23,7 @@ var spotContents = {
 		visited: false,
 	},
 	"KING TACOS": {
-		img: "hoge",
+		img: "./images/spot/kintako.jpg",
 		msg: "「こ、これは…結構ボリューミーなタコライス！定番はチーズ野菜！ほかにもハンバーガーや、[チキンバラバラ]なんてメニューもある。気になるなぁ。』",
 		visited: false,
 	},
@@ -33,17 +33,17 @@ var spotContents = {
 		visited: false,
 	},
 	"パイナップルパーク": {
-		img: "hoge",
+		img: "./images/spot/pai.jpg",
 		msg: "「パイナップルって木に実るのかと思っていたけど、下から生えてくるんだね！手でちぎって食べるスナックパインなんてあるんだ！甘酸っぱくておいしい！」",
 		visited: false,
 	},
 	"むら咲むら": {
-		img: "hoge",
+		img: "./images/spot/mura.jpg",
 		msg: "「沖縄の文化や伝統を体験できる場所！世界遺産や、焼物工房まであるんだ〜。全部回ってみようかな！」 collection Get!",
 		visited: false,
 	},
 	"玉陵": {
-		img: "hoge",
+		img: "./images/spot/tama.jpg",
 		msg: "「大きいなぁ…！琉球王国の王様のお墓なのか…和製のピラミッドみたいな感じかな？」 collection Get!",
 		visited: false,
 	},
@@ -57,23 +57,23 @@ var spotContents = {
 var events = {
 	"あんだぎー": {
 		img: "./images/items/item-anda.png",
-		msg: "hoge"
+		msg: "おばぁから サーターアンダギー もらった! item Get!"
 	},
 	"あわもり": {
 		img: "./images/items/item-awa.png",
-		msg: "hoge"
+		msg: "おじぃとしまぁ飲んだ! 車運転しちゃダメ"
 	},
 	"こんこんべ": {
 		img: "./images/collection/item-konko.png",
-		msg: "hoge"
+		msg: "こんこんべがいつの間にかついてきてた!"
 	},
 	"さんば": {
 		img: "",
-		msg: "hoge"
+		msg: "ｷｪｪｪｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴｴ"
 	},
 	"さんしん": {
 		img: "",
-		msg: "hoge"
+		msg: "あうあう"
 	}
 };
 
@@ -166,6 +166,7 @@ function displayEventModal() {
 	$('.modal_kabotya').css('display', 'block');
 	$('.modal_kabotya').load("templates/kabotya_event.html", function() {
 		$('.event_contents_img').html('<img src=\"' + eventItem.img + '\" />');
+		$('.event_contents_text').text(eventItem.msg);
 	});
 }
 

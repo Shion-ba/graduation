@@ -182,12 +182,47 @@ function displaySpotModal(spot) {
 }
 
 function drawMap() {
+	var scale = 0.5;
 	var canvas = $('#pointCanvas');
 	var context = canvas[0].getContext('2d');
 	var pointImg = new Image();
 	pointImg.src = 'images/point.png';
+	var positionX, positionY;
+	if (mass == 50) {
+		positionX = 50;
+		positionY = 100;
+	} else if (mass > 44) {
+		positionX = 45;
+		positionY = 120;
+	} else if (mass > 39) {
+		positionX = 60;
+		positionY = 120;
+	} else if (mass > 34) {
+		positionX = 90;
+		positionY = 95;
+	} else if (mass > 29) {
+		positionX = 120;
+		positionY = 95;
+	} else if (mass > 24) {
+		positionX = 130;
+		positionY = 70;
+	} else if (mass > 19) {
+		positionX = 135;
+		positionY = 25;
+	} else if (mass > 14) {
+		positionX = 150;
+		positionY = 40;
+	} else if (mass > 9) {
+		positionX = 80;
+		positionY = 70;
+	} else {
+		positionX = 65;
+		positionY = 100;
+	}
 	pointImg.onload = function() {
-		context.drawImage(pointImg, 0, 0);
+		var dstWidth = this.width * scale;
+		var dstHeight = this.height * scale;
+		context.drawImage(pointImg, 0, 0, this.width, this.height, positionX, positionY, dstWidth, dstHeight);
 	};
 }
 

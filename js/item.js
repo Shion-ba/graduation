@@ -2,18 +2,18 @@ items = ["images/items/item-anda.png",
 		"images/items/item-awa.png",
 		"images/items/item-chin.png",
 		"images/items/item-san.png",
-		"images/items/item-awa.png",
-		"images/items/item-awa.png"
+		"images/items/item-sanshi.png",
+		"images/items/item-sanba.png"
 		];
 
 
 collections = [
-		"images/collection/item-konko.png",
+		"images/collection/item-yubi.png",
 		"images/collection/item-konko.png",
 		"images/collection/item-sisa.png",
 		"images/collection/item-garasu.png",
-		"images/collection/item-konko.png",
-		"images/collection/item-konko.png",
+		"images/collection/item-ishi.png",
+		"images/collection/item-jin.png",
 		];
 
 

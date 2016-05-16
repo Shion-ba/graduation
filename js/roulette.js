@@ -7,14 +7,14 @@ function roulette(){
 	//停止位置の設定
 	var angle = stopAngle; //ルーレットの角度の変数。停止位置の値を初期値に設定する。
 	var section = 360/divide; //ルーレットの分割エリアから1エリア分の角度を求める
-console.log(rand , stopAngle);
+	console.log(rand , stopAngle);
 	for(i=1; i<=divide; i ++){
 		if(section * (i-1)+1 <= stopAngle && stopAngle <= section*i){
 		stopNumber = i;
 	   }
 	};
 	//停止位置がどのエリアにあるか調べ、該当する番号をNumberに格納
-
+	
 	advance(rand);
 
 	//回る処理
@@ -34,4 +34,3 @@ console.log(rand , stopAngle);
 		});
 	},timeout);	
 };
-

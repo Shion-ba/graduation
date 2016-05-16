@@ -20,11 +20,9 @@
 	z-index:200;
 }
 
-.location_point {
-	height: 50px;
-	margin-left: 120px;
-	margin-top: 280px;
-	width: 50px;
+#pointCanvas{
+	height: 400px;
+	width: 700px;
 }
 
 .kabotya_map_contents img {

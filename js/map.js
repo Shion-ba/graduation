@@ -181,6 +181,16 @@ function displaySpotModal(spot) {
   });
 }
 
+function drawMap() {
+	var canvas = $('#pointCanvas');
+	var context = canvas[0].getContext('2d');
+	var pointImg = new Image();
+	pointImg.src = 'images/point.png';
+	pointImg.onload = function() {
+		context.drawImage(pointImg, 0, 0);
+	};
+}
+
 function displayGoal() {
 	$('.modal_kabotya').css('display', 'block');
 	$('.modal_kabotya').load("./templates/kabotya_goal.html");

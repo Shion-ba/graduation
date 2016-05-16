@@ -92,9 +92,7 @@ $(window).load(function() {
 function displayModal() {
     $('.modal_kabotya').css('display','block');
     $('.modal_kabotya').load("templates/kabotya_map.html", function() {
-
-    var positionT = $('.location_point').position().top;
-    var positionL = $('.location_point').position().left;
+        drawMap();
     });
 
 }

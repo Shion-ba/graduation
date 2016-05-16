@@ -28,8 +28,6 @@ $(window).load(function() {
 
 
 
-
-
     //詳細
     $(".item").click(function(event){
         target =Number(event.target.id.slice(5));

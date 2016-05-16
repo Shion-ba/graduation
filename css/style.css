@@ -37,10 +37,18 @@
 
 
 .mass {
-	border: solid 1px #fff;
+	background-image: url("../images/kumo-illust6.png");
+	background-repeat: no-repeat;
+	background-size: 50%;
 	position: relative;
 	width: 300px;
 	z-index: 50;
+	margin-left:2em; 
+	padding-top:4.5em;
+	padding-left: 1.6em;
+	padding-bottom: 4em;
+	font-weight: bolder;
+	font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
 }
 
 .navi {
@@ -115,9 +123,8 @@
 }
 
 .kwsk_header img{
-	height: 350px;
-	width: 350px;
-	border:solid #ffb6c1;
+	height: 330px;
+	width: 330px;
 	margin-left: 20%;
 }
 

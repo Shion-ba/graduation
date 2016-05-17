@@ -67,7 +67,6 @@ $(window).load(function() {
         
 		});
 });
-
         function modalResize(){
  
             var w = $(window).width();

@@ -73,7 +73,7 @@
 }
 
 .item{
-	pointer-events: none;
+	/*pointer-events: none;*/
 	height: 200px;
 	width: 200px;
 	border:dashed 3px orange;
@@ -124,23 +124,25 @@
 }
 
 .kwsk_header img{
+	float: left;
 	height: 330px;
 	width: 330px;
-	margin-left: 20%;
+	border:1px solid orange; 
 }
 
 .kwsk_text{
-	margin:10px 5px 10px;
+	/*margin:10px 5px 10px;*/
 	padding: 1em;
 	border: 3px solid #ccc;
-	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
-
+	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;	
+	clear: left;
 }
 
 .kwsk_menu{
 	font-weight:bold; 
 	height: 50px;
 	width: 100px;
+
 	}
 
     

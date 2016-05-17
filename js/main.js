@@ -7,7 +7,6 @@ var g_update = false;
 var mass = 50;
 
 function init() {
-	
 	// scene
 	scene = new THREE.Scene();
 	group = new THREE.Group();
@@ -23,6 +22,7 @@ function init() {
 	camera.position.y = 400;
 	camera.position.z = 500; //500
 
+	// earth
 	var loader = new THREE.TextureLoader();
   var e_texture = loader.load('images/texture.png');
 	var e_geometry = new THREE.SphereGeometry( 500, 32, 32 );
@@ -32,6 +32,7 @@ function init() {
 	earth.rotation.set( Math.PI/2, 0, Math.PI/2 );
 	group.add( earth );
 
+	// car
 	var c_texture = loader.load( 'images/car.png');
 	var c_geometry = new THREE.PlaneGeometry( 100, 60, 1, 1 );
 	var c_material = new THREE.MeshBasicMaterial( { color: 0xffffff , map: c_texture } );
@@ -41,6 +42,7 @@ function init() {
 	car.position.z = 400;
 	group.add( car );
 
+	// exclamation
 	var exB_geometry = new THREE.SphereGeometry( 10 , 8 , 8);
 	var exB_material = new THREE.MeshBasicMaterial( { color: 0xff7f7f } );
 	var ex_bottom = new THREE.Mesh( exB_geometry, exB_material );
@@ -92,6 +94,7 @@ function advance(num) {
 
 	setTimeout(function() {
 		update = false;
+		action( mass );
 	} , num * 1000);
 
 	mass = mass - num;
@@ -100,7 +103,6 @@ function advance(num) {
 		mass = 0;
 	};
 
-	action( mass );
 
 	$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
 }
@@ -116,7 +118,9 @@ function render() {
 		exclamation.position.y += 10;
 		if (exclamation.position.y === 0) {
 			ex_update = false;
-			spot(mass);
+			setTimeout(function() {
+				spot(mass);
+			}, 500);
 		};
 	};
 

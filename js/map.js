@@ -152,15 +152,21 @@ function displayEventModal() {
 	} else if (mass > 30) {
 		eventItem = events["あわもり"];
 		getItem(2);
+		mass += 6;
+		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
 	} else if (mass > 25) {
 		eventItem = events["こんこんべ"];
 		getCollection(2);
 	} else if (mass > 15) {
 		eventItem = events["さんば"];
 		getItem(6);
+		mass -= 3;
+		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
 	} else {
 		eventItem = events["さんしん"];
 		getItem(5);
+		mass -= 3;
+		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
 	}
 
 	$('.modal_kabotya').css('display', 'block');

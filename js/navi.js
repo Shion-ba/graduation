@@ -1,6 +1,7 @@
 
 $(window).load(function() {
     var item = true;
+    var target ;
     var fromlist ;
 	$(".button").click(function (){
         $("#modal").fadeIn("fast");
@@ -15,13 +16,13 @@ $(window).load(function() {
 
     $(".change").click(function(){
         if(item){
-        $("#item").css("display","none");
-        $("#collection").css("display","block");
-        item = false;
+            $("#item").css("display","none");
+            $("#collection").css("display","block");
+            item = false;
         }else{
              $("#collection").css("display","none");
-        $("#item").css("display","block");
-        item = true;
+            $("#item").css("display","block");
+            item = true;
         }
       
     });
@@ -41,7 +42,7 @@ $(window).load(function() {
 
 
     $(".collection").click(function(event){
-        target =Number(event.target.id.slice(12));
+        target =Number(event.target.id.slice(11));
         $("#collection").css("display","none");
         $(".kwsk").css("display","block");
         $("#kwsk_img").attr("src",collections[target-1]);

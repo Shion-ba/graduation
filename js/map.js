@@ -8,7 +8,7 @@ var spotContents = {
 		visited: false,
 	},
 	"斎場御嶽": {
-		img: "./images/spot/sefa.png",
+		img: "./images/spot/sefa.jpg",
 		msg: "「昔は、男子禁制の場所で王様さえ女装しないと入れなかったんだって！神聖な場所なんだね〜。」 item Get!",
 		visited: false,
 	},

@@ -20,11 +20,13 @@ collections = [
 function getItem(num){
 	$("#item_"+ num )
 	.attr("src",items[num-1]);
+	$("#item_"+ num).css("pointer-events","auto");
 }
 
 
 function getCollection(num){
-	$(".collection_"+ num )
+	$("#collection_"+ num )
 	.attr("src",collections[num-1]);
+	$("#collection_"+ num).css("pointer-events","auto");
 }
 

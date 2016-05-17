@@ -73,6 +73,7 @@
 }
 
 .item{
+	pointer-events: none;
 	height: 200px;
 	width: 200px;
 	border:dashed 3px orange;
@@ -81,6 +82,7 @@
 }
 
 .collection{
+	pointer-events: none;
 	height: 200px;
 	width: 200px;
 	border:dashed 3px orange;

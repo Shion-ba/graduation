@@ -17,7 +17,6 @@ collection_text = [
 			];
 
 function getIt_tx(num){	
-	console.log("動いてます")
     $("#text").text(item_text[num-1]);
 	}
 

@@ -77,6 +77,7 @@ var events = {
 	}
 };
 
+
 var gameCount = 1;
 var spotCount = 10;
 

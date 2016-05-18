@@ -54,31 +54,8 @@ var spotContents = {
 	}
 };
 
-var events = {
-	"あんだぎー": {
-		img: "./images/items/item-anda.png",
-		msg: "おばぁから サーターアンダギー もらった! item Get!"
-	},
-	"あわもり": {
-		img: "./images/items/item-awa.png",
-		msg: "おじぃとしまぁ飲んだ! 車運転しちゃダメ！６マス戻る。"
-	},
-	"こんこんべ": {
-		img: "./images/collection/item-konko.png",
-		msg: "こんこんべがいつの間にかついてきてた!"
-	},
-	"さんば": {
-		img: "./images/items/item-sanba.png",
-		msg: "三枚の板で作られた打楽器。きれいに音を鳴らすにはコツがいる。 なんだか踊りだしたい気持ちになった。サンバだけに。 ３マス進む。サンバだけに。"
-	},
-	"さんしん": {
-		img: "./images/items/item-sanshi.png",
-		msg: "三線を弾き鳴らしながら踊っていた愉快なおじぃにもらう。 楽しい気持ちになり、３マス進む。"
-	}
-};
-
 var gameCount = 1;
-var spotCount = 10;
+var spotCount = 0;
 
 function spot ( mass ) {
 
@@ -140,10 +117,11 @@ function displaySpotModal(spot) {
   $('.modal_kabotya').load("templates/kabotya_spot.html", function() {
   	$('.spot_contents_img').html('<img src=\"' + spotContents[spot].img + '\" />');
 		$('.spot_contents_text').text(spotContents[spot].msg);
-		if (!spotContents[spot].visited) {
-			spotContents[spot].visited = true;
-		};
   });
+  if (!spotContents[spot].visited) {
+  	spotCount ++;
+  	spotContents[spot].visited = true;
+  };
 }
 
 function drawMap() {

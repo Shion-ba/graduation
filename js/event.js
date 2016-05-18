@@ -54,7 +54,7 @@ function displayEventModal() {
 		getItem( 6 );
 		mass -= 3;
 		$( '.mass' ).html( "<p>" + gameCount + "周目 残り" + mass + "マス</p>" );
-	} else {
+	} else if ( mass > 5) {
 		eventItem = events[ "さんしん" ];
 		otherEvent( eventItem );
 		getItem( 5 );

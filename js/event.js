@@ -21,11 +21,11 @@ var events = {
 	}
 };
 
-var konkonItem = ['', ''];
+var konkonItem = [ '', '' ];
 
-function eventroulette(num) {
-	var rand = Math.floor(Math.random() * 5);
-	if (rand < 2) {
+function eventroulette( num ) {
+	var rand = Math.floor( Math.random() * 5 );
+	if ( rand < 2 ) {
 		displayEventModal();
 	};
 }
@@ -33,32 +33,32 @@ function eventroulette(num) {
 function displayEventModal() {
 	var eventItem;
 
-	if (mass > 40) {
-		eventItem = events["あんだぎー"];
+	if ( mass > 40 ) {
+		eventItem = events[ "あんだぎー" ];
 		otherEvent( eventItem );
-		getItem(1);
-		konkonItem[0] = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="kEventA()">あんだぎーをあげる</button>';
-	} else if (mass > 30) {
-		eventItem = events["あわもり"];
+		getItem( 1 );
+		konkonItem[ 0 ] = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="kEventA()">あんだぎーをあげる</button>';
+	} else if ( mass > 30 ) {
+		eventItem = events[ "あわもり" ];
 		otherEvent( eventItem );
-		getItem(2);
+		getItem( 2 );
 		mass += 6;
-		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
-	} else if (mass > 25) {
-		eventItem = events["こんこんべ"];
-		konkonbeEvent(eventItem);
-	} else if (mass > 15) {
-		eventItem = events["さんば"];
+		$( '.mass' ).html( "<p>" + gameCount + "周目 残り" + mass + "マス</p>" );
+	} else if ( mass > 25 ) {
+		eventItem = events[ "こんこんべ" ];
+		konkonbeEvent( eventItem );
+	} else if ( mass > 15 ) {
+		eventItem = events[ "さんば" ];
 		otherEvent( eventItem );
-		getItem(6);
+		getItem( 6 );
 		mass -= 3;
-		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
+		$( '.mass' ).html( "<p>" + gameCount + "周目 残り" + mass + "マス</p>" );
 	} else {
-		eventItem = events["さんしん"];
+		eventItem = events[ "さんしん" ];
 		otherEvent( eventItem );
-		getItem(5);
+		getItem( 5 );
 		mass -= 3;
-		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
+		$( '.mass' ).html( "<p>" + gameCount + "周目 残り" + mass + "マス</p>" );
 	}
 }
 
@@ -67,31 +67,31 @@ function massEvent() {
 }
 
 function otherEvent( eventItem ) {
-	$('.modal_kabotya').css('display', 'block');
-	$('.modal_kabotya').load("templates/kabotya_event.html", function() {
-		$('.event_contents_img').html('<img src=\"' + eventItem.img + '\" />');
-		$('.event_contents_text').text(eventItem.msg);
+	$( '.modal_kabotya' ).css( 'display', 'block' );
+	$( '.modal_kabotya' ).load( "templates/kabotya_event.html", function() {
+		$( '.event_contents_img' ).html( '<img src=\"' + eventItem.img + '\" />' );
+		$( '.event_contents_text' ).text( eventItem.msg );
 	});
 }
 
 function konkonbeEvent( eventItem ) {
-	$('.modal_kabotya').css('display', 'block');
-	$('.modal_kabotya').load("templates/kabotya_event.html", function() {
-		$('.event_contents_img').html('<img src=\"' + eventItem.img + '\" />');
-		$('.event_contents_text').text(eventItem.msg);
-		$('.event_menu').html( konkonItem[ 0 ] );
-		$('.event_menu').append( konkonItem[ 1 ] );
-		$('.event_menu').append('<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>');
+	$( '.modal_kabotya' ).css( 'display', 'block' );
+	$( '.modal_kabotya' ).load( "templates/kabotya_event.html", function() {
+		$( '.event_contents_img' ).html( '<img src=\"' + eventItem.img + '\" />' );
+		$( '.event_contents_text' ).text( eventItem.msg );
+		$( '.event_menu' ).html( konkonItem[ 0 ] );
+		$( '.event_menu' ).append( konkonItem[ 1 ] );
+		$( '.event_menu' ).append( '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>' );
 	});
 }
 
 function kEventA() {
-	$('.event_contents_text').text('さーたーあんだぎーをあげた! どうやら仲間だと思ったみたいだ。');
-	$('.event_menu').html('<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>');
+	$( '.event_contents_text' ).text( 'さーたーあんだぎーをあげた! どうやら仲間だと思ったみたいだ。' );
+	$( '.event_menu' ).html( '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>' );
 }
 
 function kEventT() {
-	$('.event_contents_text').text('ちんすこうをあげた! どうやら気に入ったらしく一緒に旅することになった collection Get!');
-	$('.event_menu').html('<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>');
-	getCollection(2);
+	$( '.event_contents_text' ).text( 'ちんすこうをあげた! どうやら気に入ったらしく一緒に旅することになった collection Get!' );
+	$( '.event_menu' ).html( '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>' );
+	getCollection( 2 );
 }

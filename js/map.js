@@ -54,30 +54,6 @@ var spotContents = {
 	}
 };
 
-var events = {
-	"あんだぎー": {
-		img: "./images/items/item-anda.png",
-		msg: "おばぁから サーターアンダギー もらった! item Get!"
-	},
-	"あわもり": {
-		img: "./images/items/item-awa.png",
-		msg: "おじぃとしまぁ飲んだ! 車運転しちゃダメ"
-	},
-	"こんこんべ": {
-		img: "./images/collection/item-konko.png",
-		msg: "こんこんべがいつの間にかついてきてた!"
-	},
-	"さんば": {
-		img: "./images/items/item-sanba.png",
-		msg: "三枚の板で作られた打楽器。きれいに音を鳴らすにはコツがいる。 なんだか踊りだしたい気持ちになった。サンバだけに。 ３マス進む。サンバだけに。"
-	},
-	"さんしん": {
-		img: "./images/items/item-sanshi.png",
-		msg: "三線を弾き鳴らしながら踊っていた愉快なおじぃにもらう。 楽しい気持ちになり、３マス進む。"
-	}
-};
-
-
 var gameCount = 1;
 var spotCount = 10;
 
@@ -122,6 +98,7 @@ function spot ( mass ) {
 		case 2:
 			spot = spotArray[ 9 ];
 			getItem(3);
+			konkonItem[1] = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="kEventT()">ちんすこうをあげる</button>';
 			break;
 		case 0:
 			break;
@@ -130,51 +107,8 @@ function spot ( mass ) {
 	displaySpotModal(spot);
 }
 
-function massEvent() {
-	ex_update = true;
-}
-
 function goalEvent() {
 	g_update = true;
-}
-
-function eventroulette(num) {
-	var rand = Math.floor(Math.random() * 5);
-	if (rand < 3) {
-		displayEventModal();
-	};
-}
-
-function displayEventModal() {
-	var eventItem; 
-	if (mass > 40) {
-		eventItem = events["あんだぎー"];
-		getItem(1);
-	} else if (mass > 30) {
-		eventItem = events["あわもり"];
-		getItem(2);
-		mass += 6;
-		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
-	} else if (mass > 25) {
-		eventItem = events["こんこんべ"];
-		getCollection(2);
-	} else if (mass > 15) {
-		eventItem = events["さんば"];
-		getItem(6);
-		mass -= 3;
-		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
-	} else {
-		eventItem = events["さんしん"];
-		getItem(5);
-		mass -= 3;
-		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
-	}
-
-	$('.modal_kabotya').css('display', 'block');
-	$('.modal_kabotya').load("templates/kabotya_event.html", function() {
-		$('.event_contents_img').html('<img src=\"' + eventItem.img + '\" />');
-		$('.event_contents_text').text(eventItem.msg);
-	});
 }
 
 function displaySpotModal(spot) {

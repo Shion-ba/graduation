@@ -191,6 +191,7 @@ function drawMap() {
 }
 
 function displayGoal() {
+  $(".modal_kabotya").fadeIn("fast");
 	$('.modal_kabotya').css('display', 'block');
 	$('.modal_kabotya').load("./templates/kabotya_goal.html");
 }

@@ -89,6 +89,7 @@ $(window).load(function() {
 
 //かぼちゃ追記部分です。
 function displayModal() {
+    $(".modal_kabotya").fadeIn("fast");
     $('.modal_kabotya').css('display','block');
     $('.modal_kabotya').load("templates/kabotya_map.html", function() {
         drawMap();

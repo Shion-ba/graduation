@@ -23,6 +23,13 @@ var events = {
 
 var konkonItem = ['', ''];
 
+function eventroulette(num) {
+	var rand = Math.floor(Math.random() * 5);
+	if (rand < 2) {
+		displayEventModal();
+	};
+}
+
 function displayEventModal() {
 	var eventItem;
 
@@ -40,7 +47,6 @@ function displayEventModal() {
 	} else if (mass > 25) {
 		eventItem = events["こんこんべ"];
 		konkonbeEvent(eventItem);
-		getCollection(2);
 	} else if (mass > 15) {
 		eventItem = events["さんば"];
 		otherEvent( eventItem );
@@ -54,13 +60,6 @@ function displayEventModal() {
 		mass -= 3;
 		$('.mass').html("<p>" + gameCount + "周目 残り" + mass + "マス</p>");
 	}
-}
-
-function eventroulette(num) {
-	var rand = Math.floor(Math.random() * 5);
-	if (rand < 2) {
-		displayEventModal();
-	};
 }
 
 function massEvent() {
@@ -84,4 +83,15 @@ function konkonbeEvent( eventItem ) {
 		$('.event_menu').append( konkonItem[ 1 ] );
 		$('.event_menu').append('<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>');
 	});
+}
+
+function kEventA() {
+	$('.event_contents_text').text('さーたーあんだぎーをあげた! どうやら仲間だと思ったみたいだ。');
+	$('.event_menu').html('<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>');
+}
+
+function kEventT() {
+	$('.event_contents_text').text('ちんすこうをあげた! どうやら気に入ったらしく一緒に旅することになった collection Get!');
+	$('.event_menu').html('<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>');
+	getCollection(2);
 }

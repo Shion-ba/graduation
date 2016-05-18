@@ -24,7 +24,7 @@ var spotContents = {
 	},
 	"KING TACOS": {
 		img: "./images/spot/kintako.jpg",
-		msg: "「こ、これは…結構ボリューミーなタコライス！定番はチーズ野菜！ほかにもハンバーガーや、[チキンバラバラ]なんてメニューもある。気になるなぁ。』",
+		msg: "「こ、これは…結構ボリューミーなタコライス！定番はチーズ野菜！ほかにもハンバーガーや、[チキンバラバラ]なんてメニューもある。気になるなぁ。」",
 		visited: false,
 	},
 	"美ら海水族館": {
@@ -51,6 +51,29 @@ var spotContents = {
 		img: "./images/spot/shuri.jpg",
 		msg: "「立派なお城だなぁ！沖縄らしい真っ赤な外観と中国風な作りが面白い！」 item Get!",
 		visited: false,
+	}
+};
+
+var events = {
+	"あんだぎー": {
+		img: "./images/items/item-anda.png",
+		msg: "おばぁから サーターアンダギー もらった! item Get!"
+	},
+	"あわもり": {
+		img: "./images/items/item-awa.png",
+		msg: "おじぃとしまぁ飲んだ! 車運転しちゃダメ！６マス戻る。"
+	},
+	"こんこんべ": {
+		img: "./images/collection/item-konko.png",
+		msg: "こんこんべがいつの間にかついてきてた!"
+	},
+	"さんば": {
+		img: "./images/items/item-sanba.png",
+		msg: "三枚の板で作られた打楽器。きれいに音を鳴らすにはコツがいる。 なんだか踊りだしたい気持ちになった。サンバだけに。 ３マス進む。サンバだけに。"
+	},
+	"さんしん": {
+		img: "./images/items/item-sanshi.png",
+		msg: "三線を弾き鳴らしながら踊っていた愉快なおじぃにもらう。 楽しい気持ちになり、３マス進む。"
 	}
 };
 

@@ -124,23 +124,34 @@
 }
 
 .kwsk_header img{
+	margin-top:35px; 
+	margin-left: 10px;
+	float: left;
 	height: 330px;
 	width: 330px;
-	margin-left: 20%;
+	/*border:1px solid orange; */
 }
 
 .kwsk_text{
-	margin:10px 5px 10px;
+	margin-top:30px; 
+	margin-right: 5px;
+	height: 300px;
+	width: 320px;
 	padding: 1em;
 	border: 3px solid #ccc;
-	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
-
+	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;	
+	font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+	float: right;
 }
 
 .kwsk_menu{
-	font-weight:bold; 
+	clear: both;
+	margin-top: 7em;
+	margin-left:23em;
+	font-weight:bold;
 	height: 50px;
 	width: 100px;
+
 	}
 
     

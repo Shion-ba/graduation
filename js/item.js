@@ -6,7 +6,6 @@ items = ["images/items/item-anda.png",
 		"images/items/item-sanba.png"
 		];
 
-
 collections = [
 		"images/collection/item-yubi.png",
 		"images/collection/item-konko.png",
@@ -16,13 +15,11 @@ collections = [
 		"images/collection/item-jin.png",
 		];
 
-
 function getItem(num){
 	$("#item_"+ num )
 	.attr("src",items[num-1]);
 	$("#item_"+ num).css("pointer-events","auto");
 }
-
 
 function getCollection(num){
 	$("#collection_"+ num )

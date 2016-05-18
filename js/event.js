@@ -22,6 +22,7 @@ var events = {
 };
 
 var konkonItem = [ '', '' ];
+var awamoriItem = '';
 
 function eventroulette( num ) {
 	var rand = Math.floor( Math.random() * 5 );
@@ -40,7 +41,7 @@ function displayEventModal() {
 		konkonItem[ 0 ] = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="kEventA()">あんだぎーをあげる</button>';
 	} else if ( mass > 30 ) {
 		eventItem = events[ "あわもり" ];
-		otherEvent( eventItem );
+		awamoriEvent( eventItem );
 		getItem( 2 );
 		mass += 6;
 		$( '.mass' ).html( "<p>" + gameCount + "周目 残り" + mass + "マス</p>" );
@@ -73,6 +74,25 @@ function otherEvent( eventItem ) {
 		$( '.event_contents_img' ).html( '<img src=\"' + eventItem.img + '\" />' );
 		$( '.event_contents_text' ).text( eventItem.msg );
 	});
+}
+
+function awamoriEvent( eventItem ) {
+  $( '.modal_kabotya' ).fadeIn( 'fast' );
+	$( '.modal_kabotya' ).css( 'display', 'block' );
+	$( '.modal_kabotya' ).load( "templates/kabotya_event.html", function() {
+		$( '.event_contents_img' ).html( '<img src=\"' + eventItem.img + '\" />' );
+		$( '.event_contents_text' ).text( eventItem.msg );
+		$( '.event_menu' ).html( awamoriItem );
+		$( '.event_menu' ).append( '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>' );
+	});
+}
+
+function aEventS() {
+	$( '.event_contents_text' ).text( 'なんとか飲まずに回避した' );
+	$( '.event_menu' ).html( '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>' );
+
+	awamoriItem = '';
+	mass -= 6;
 }
 
 function konkonbeEvent( eventItem ) {

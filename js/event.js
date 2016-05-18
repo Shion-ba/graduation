@@ -9,7 +9,7 @@ var events = {
 	},
 	"あわもり": {
 		img: "./images/items/item-awa.png",
-		msg: "おじぃとしまぁ飲んだ! 車運転しちゃダメ",
+		msg: "おじぃとしまぁ飲んだ! 車運転しちゃダメ！６マス戻る",
 		visited: false
 	},
 	"こんこんべ": {
@@ -113,7 +113,7 @@ function konkonbeEvent( eventItem ) {
 		$( '.event_contents_text' ).text( eventItem.msg );
 		$( '.event_menu' ).html( konkonItem[ 0 ] );
 		$( '.event_menu' ).append( konkonItem[ 1 ] );
-		$( '.event_menu' ).append( '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">閉じる</button>' );
+		$( '.event_menu' ).append( '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="hideModal()">知らんぷりする</button>' );
 	});
 }
 

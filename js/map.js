@@ -57,6 +57,7 @@ var spotContents = {
 	}
 };
 
+
 function spot ( mass ) {
 	var spot;
 

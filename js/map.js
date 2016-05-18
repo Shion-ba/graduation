@@ -61,7 +61,7 @@ var events = {
 	},
 	"あわもり": {
 		img: "./images/items/item-awa.png",
-		msg: "おじぃとしまぁ飲んだ! 車運転しちゃダメ！６マス戻る。"
+		msg: "おじぃとしまぁ飲んだ! 車運転しちゃダメ!６マス戻る。"
 	},
 	"こんこんべ": {
 		img: "./images/collection/item-konko.png",

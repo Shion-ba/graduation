@@ -91,6 +91,7 @@ function spot ( mass ) {
 		case 40:
 			spot = spotArray[ 1 ];
 			getItem(4);
+			awamoriItem = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="aEventS()">さんぐわぁーで回避</button>'
 			break;
 		case 35:
 			spot = spotArray[ 2 ];

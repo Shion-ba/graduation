@@ -1,6 +1,6 @@
 var windowWidth = $( window ).width();
 var windowHeight = $( window ).height();
-var scene, camera, renderer, group, earth, exclamation, goal;
+var scene, camera, renderer, group, cloud, earth, exclamation, goal;
 
 function init() {
 	// scene
@@ -8,6 +8,7 @@ function init() {
 	group = new THREE.Group();
 	exclamation = new THREE.Group();
 	goal = new THREE.Group();
+	cloud = new THREE.Group();
 
 	// camera
 	var fov = 75;
@@ -37,6 +38,21 @@ function init() {
 	car.position.y = 350;
 	car.position.z = 400;
 	group.add( car );
+
+	// cloud
+	var cl_texture = loader.load( 'images/cloud.png' );
+	var cl_geometry = new THREE.PlaneGeometry( 100, 100, 1, 1 );
+	var cl_material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: cl_texture } );
+	cl_material.transparent = true;
+	for ( var i = 0; i < 8; i ++ ) {
+		var cl = new THREE.Mesh( cl_geometry, cl_material );
+		cl.position.x = Math.random() * 2000 - 1000;
+		cl.position.y = Math.random() * 50 + 600;
+		cl.position.z = Math.random() * 800 - 400;
+		cloud.add(cl);
+	}
+
+	group.add( cloud );
 
 	// exclamation
 	var exB_geometry = new THREE.SphereGeometry( 10 , 8 , 8 );

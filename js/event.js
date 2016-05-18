@@ -67,6 +67,7 @@ function massEvent() {
 }
 
 function otherEvent( eventItem ) {
+	$(".modal_kabotya").fadeIn("fast");
 	$( '.modal_kabotya' ).css( 'display', 'block' );
 	$( '.modal_kabotya' ).load( "templates/kabotya_event.html", function() {
 		$( '.event_contents_img' ).html( '<img src=\"' + eventItem.img + '\" />' );
@@ -75,6 +76,7 @@ function otherEvent( eventItem ) {
 }
 
 function konkonbeEvent( eventItem ) {
+  $(".modal_kabotya").fadeIn("fast");
 	$( '.modal_kabotya' ).css( 'display', 'block' );
 	$( '.modal_kabotya' ).load( "templates/kabotya_event.html", function() {
 		$( '.event_contents_img' ).html( '<img src=\"' + eventItem.img + '\" />' );

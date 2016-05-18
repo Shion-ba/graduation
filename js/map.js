@@ -66,7 +66,7 @@ function spot ( mass ) {
 			break;
 		case 40:
 			spot = spotArray[ 1 ];
-			getItem( 4, spotContents[spot].visited );
+			getItem( 4, spotContents[spot]);
 			awamoriItem = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="aEventS()">さんぐわぁーで回避</button>'
 			break;
 		case 35:
@@ -97,7 +97,7 @@ function spot ( mass ) {
 			break;
 		case 2:
 			spot = spotArray[ 9 ];
-			getItem( 3, spotContents[spot].visited );
+			getItem( 3, spotContents[spot]);
 			konkonItem[ 1 ] = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="kEventT()">ちんすこうをあげる</button>';
 			break;
 		case 0:

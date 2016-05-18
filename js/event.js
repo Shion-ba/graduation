@@ -43,13 +43,13 @@ function displayEventModal() {
 	if ( mass > 40 ) {
 		eventItem = events[ "あんだぎー" ];
 		otherEvent( eventItem );
-		getItem( 1, eventItem.visited );
+		getItem( 1, eventItem );
 		konkonItem[ 0 ] = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="kEventA()">あんだぎーをあげる</button>';
 	} 
 	else if ( mass > 30 ) {
 		eventItem = events[ "あわもり" ];
 		awamoriEvent( eventItem );
-		getItem( 2, eventItem.visited );
+		getItem( 2, eventItem );
 		mass += 6;
 		$( '.mass' ).html( "<p>" + gameCount + "周目 残り" + mass + "マス</p>" );
 	} 
@@ -60,14 +60,14 @@ function displayEventModal() {
 	else if ( mass > 15 ) {
 		eventItem = events[ "さんば" ];
 		otherEvent( eventItem );
-		getItem( 6, eventItem.visited );
+		getItem( 6, eventItem );
 		mass -= 3;
 		$( '.mass' ).html( "<p>" + gameCount + "周目 残り" + mass + "マス</p>" );
 	}
 	else if ( mass > 5) {
 		eventItem = events[ "さんしん" ];
 		otherEvent( eventItem );
-		getItem( 5, eventItem.visited );
+		getItem( 5, eventItem );
 		mass -= 3;
 		$( '.mass' ).html( "<p>" + gameCount + "周目 残り" + mass + "マス</p>" );
 	}

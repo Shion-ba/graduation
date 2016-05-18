@@ -18,14 +18,17 @@ collections = [
 		"images/collection/item-jin.png",
 		];
 
-function getItem( num, visited ){
+function getItem( num, content ){
 	$( "#item_" + num ).attr( "src", items[ num - 1 ] );
 	$( "#item_" + num ).css( "pointer-events", "auto" );
+	console.log(content);
 
-	if ( !visited ) {
+	if ( !content.visited ) {
 		itemCount ++;
-		visited = true;
+		content.visited = true;
 	};
+
+	console.log(content);
 }
 
 function getCollection( num, visited ){

@@ -14,7 +14,7 @@ function roulette(){
 	};
 	//停止位置がどのエリアにあるか調べ、該当する番号をNumberに格納
 	
-	advance(rand);
+
 
 	//回る処理
 	var rotation = setInterval(function(){
@@ -31,5 +31,7 @@ function roulette(){
 			angle:angle,
 			animateTo:stopAngle,
 		});
+
+		advance(rand);
 	},timeout);	
 };

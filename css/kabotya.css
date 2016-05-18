@@ -92,6 +92,25 @@
 	width: 700px;
 }
 
+.goal_header img{
+	height: 110px;
+	width: 300px;
+	margin-left: 200px;
+	margin-top: 10px;
+}
+
+.goal_body{
+	border: solid 1px #000; 
+	height: 235px;
+	width: 370px;
+	margin: 20px 165px;
+}
+
+.goal_text{
+	font-size: 20px;
+	margin: 40px 140px;
+}
+
 .button_map {
 	height: 100px;
 	width: 100px;

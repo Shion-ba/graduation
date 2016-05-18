@@ -89,7 +89,6 @@
 }
 
 .goal_main {
-	border:solid 1px #f00;
 	height: 400px;
 	width: 700px;
 }
@@ -102,10 +101,12 @@
 }
 
 .goal_body {
-	border: solid 1px #000; 
 	height: 235px;
 	width: 370px;
 	margin: 20px 165px;
+	display: inline-block;
+	border: 4px dashed #d32c3d;
+	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;	
 }
 
 .goal_body p{

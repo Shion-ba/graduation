@@ -164,5 +164,6 @@
 	background-color: rgb(178,255,89);
 	}
 
-    
-}
+    .mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab{
+    	margin: 20px;
+    }

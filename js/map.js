@@ -235,7 +235,13 @@ function drawMap() {
 
 function displayGoal() {
 	$('.modal_kabotya').css('display', 'block');
-	$('.modal_kabotya').load("./templates/kabotya_goal.html");
+	$('.modal_kabotya').load("./templates/kabotya_goal.html", function(){
+	$(".goal_round").text(gameCount +"週目");
+	$(".spotCount").text("スポット " + spotCount + "/10カ所中");
+	$(".itemCount").text("アイテム " + + "/6種中");
+	$(".collectionCount").text("コレクション " + + "/6種中");
+
+	});
 }
 
 function gameContinue() {

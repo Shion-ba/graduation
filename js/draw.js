@@ -21,6 +21,7 @@ function init() {
 	camera.position.z = 500; //500
 
 	// earth
+	var raidus = 450;
 	var loader = new THREE.TextureLoader();
   var e_texture = loader.load( 'images/texture.png' );
 	var e_geometry = new THREE.SphereGeometry( 500, 32, 32 );
@@ -31,15 +32,31 @@ function init() {
 
 	earth.add( e_sphere );
 
-	var w_texture = loader.load( 'images/wood.png' );
-	var w_geometry = new THREE.PlaneGeometry( 188, 211, 1, 1);
-	var w_material = new THREE.MeshBasicMaterial( { color: 0xffffff , map: w_texture } );
+	var degree = 0;
+	var w_texture = loader.load( 'images/kusa.png' );
+	//( 188, 211, 1, 1); 
+	var w_material = new THREE.MeshBasicMaterial( { color: 0x6bc550 } );
 	w_material.transparent = true;
-	var wood = new THREE.Mesh( w_geometry, w_material );
-	wood.position.x = 100;
-	wood.position.y = 600;
-	wood.rotation.set(0,0,50);
-	earth.add(wood);
+	for ( var i = 0; i < 40; i ++ ) {
+		var w_geometry = new THREE.SphereGeometry( Math.random() * 40 + 20, 8, 8 );
+		var wood = new THREE.Mesh( w_geometry, w_material );
+		var rad = degree * Math.PI / 180;
+		var y = raidus * Math.sin( rad );
+		var z = raidus * Math.cos( rad );
+		wood.position.set( 200, y, z);
+		earth.add(wood);
+		degree += 10;
+	}
+	for ( var i = 0; i < 40; i ++ ) {
+		var w_geometry = new THREE.SphereGeometry( Math.random() * 40 + 20, 8, 8 );
+		var wood = new THREE.Mesh( w_geometry, w_material );
+		var rad = degree * Math.PI / 180;
+		var y = raidus * Math.sin( rad );
+		var z = raidus * Math.cos( rad );
+		wood.position.set( -200, y, z);
+		earth.add(wood);
+		degree += 10;
+	}
 	group.add( earth );
 
 	// car

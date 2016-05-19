@@ -18,10 +18,10 @@ function init() {
 	var far = 1000;
 	camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
 	camera.position.y = 400;
-	camera.position.z = 500; //500
+	camera.position.z = 500;
 
 	// earth
-	var raidus = 450;
+	var raidus = 480;
 	var loader = new THREE.TextureLoader();
   var e_texture = loader.load( 'images/texture.png' );
 	var e_geometry = new THREE.SphereGeometry( 500, 32, 32 );
@@ -38,7 +38,6 @@ function init() {
 	var w_material = new THREE.MeshBasicMaterial( { color: 0x6bc550, map: w_texture } );
 	w_material.transparent = true;
 	for ( var i = 0; i < 40; i ++ ) {
-		//var w_geometry = new THREE.SphereGeometry( Math.random() * 40 + 20, 8, 8 );
 		wood = new THREE.Mesh( w_geometry, w_material );
 		var rad = degree * Math.PI / 180;
 		var y = raidus * Math.sin( rad );
@@ -48,7 +47,6 @@ function init() {
 		degree += 10;
 	}
 	for ( var i = 0; i < 40; i ++ ) {
-		//var w_geometry = new THREE.SphereGeometry( Math.random() * 40 + 20, 8, 8 );
 		wood = new THREE.Mesh( w_geometry, w_material );
 		var rad = degree * Math.PI / 180;
 		var y = raidus * Math.sin( rad );

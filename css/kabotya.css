@@ -9,14 +9,14 @@
 
 .kabotya_map_contents {
 	height: 400px;
-	text-align: center;
 	width: 700px;
+	text-align: center;
 }
 
 .map_location {
 	height: 400px;
-	position: absolute;
 	width: 700px;
+	position: absolute;
 	z-index:200;
 }
 
@@ -37,9 +37,9 @@
 
 .spot_contents_img {
 	height: 300px;
-	text-align: center;
-	margin-top: 10px;
 	width: 700px;
+	margin-top: 10px;
+	text-align: center;
 }
 
 .spot_contents_img img {
@@ -52,10 +52,10 @@
 	border: solid 3px #ffc993;
 	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;	
 	height: 50px;
-	margin: 10px auto;
-	overflow: hidden;
-	padding: 10px;
 	width: 650px;
+	margin: 10px auto;
+	padding: 10px;
+	overflow: hidden;
 	font-size: 14px;
 }
 
@@ -66,9 +66,9 @@
 
 .event_contents_img {
 	height: 300px;
-	text-align: center;
-	margin-top: 10px;
 	width: 700px;
+	margin-top: 10px;
+	text-align: center;
 }
 
 .event_contents_img img {
@@ -81,10 +81,10 @@
 	border: solid 3px #ffc993;
 	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;	
 	height: 50px;
-	margin: 10px auto;
-	overflow: hidden;
-	padding: 10px;
 	width: 650px;
+	margin: 10px auto;
+	padding: 10px;
+	overflow: hidden;
 	font-size: 18px;
 }
 
@@ -101,19 +101,19 @@
 }
 
 .goal_body {
+	border: 4px dashed #d32c3d;
+	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;	
 	height: 235px;
 	width: 430px;
 	margin: 20px 130px;
 	display: inline-block;
-	border: 4px dashed #d32c3d;
-	border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;	
 }
 
 .goal_body p{
-	font-size: 20px;
 	margin: 29px 115px;
 	width: 196px;
 	text-align: center;
+	font-size: 20px;
 }
 
 .button_map {

@@ -3,6 +3,7 @@ $(window).load(function() {
     var item = true;
     var target ;
     var fromlist ;
+    
 	$(".button").click(function (){
         $("#modal").fadeIn("fast");
         $("#modal").css("display","block");
@@ -27,15 +28,18 @@ $(window).load(function() {
       
     });
 
-
-
+    $(".close").click(
+        function (){
+        $("#modal").css("display","none");
+        
+        });
 
     //詳細
     $(".item").click(function(event){
         target =Number(event.target.id.slice(5));
         $("#item").css("display","none");
-        $(".kwsk").css("display","block");
-        $("#kwsk_img").attr("src",items[target-1]);
+        $(".detail").css("display","block");
+        $("#detail_img").attr("src",items[target-1]);
         getIt_tx(target);
         fromlist="item";
     });
@@ -44,16 +48,15 @@ $(window).load(function() {
     $(".collection").click(function(event){
         target =Number(event.target.id.slice(11));
         $("#collection").css("display","none");
-        $(".kwsk").css("display","block");
-        $("#kwsk_img").attr("src",collections[target-1]);
+        $(".detail").css("display","block");
+        $("#detail_img").attr("src",collections[target-1]);
         getColle_tx(target);
         fromlist="collection";
     });
 
-    $(".kwsk_menu").click(
+    $(".detail_close").click(
         function (){
-        $(".kwsk").css("display","none");
-        //$("#item").css("display","block");  
+        $(".detail").css("display","none");
         if(fromlist=="item"){
             $("#item").css("display","block");
         } else{
@@ -61,11 +64,7 @@ $(window).load(function() {
         }
         });
 
-	$(".close").click(
-		function (){
-		$("#modal").css("display","none");
-        
-		});
+	
 });
         function modalResize(){
  

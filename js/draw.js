@@ -1,6 +1,6 @@
 var windowWidth = $( window ).width();
 var windowHeight = $( window ).height();
-var scene, camera, renderer, group, cloud, earth, exclamation, goal;
+var scene, camera, renderer, group, cloud, earth, wood, exclamation, goal;
 
 function init() {
 	// scene
@@ -33,13 +33,13 @@ function init() {
 	earth.add( e_sphere );
 
 	var degree = 0;
-	var w_texture = loader.load( 'images/kusa.png' );
-	//( 188, 211, 1, 1); 
-	var w_material = new THREE.MeshBasicMaterial( { color: 0x6bc550 } );
+	var w_texture = loader.load( 'images/wood.png' );
+	var w_geometry = new THREE.PlaneGeometry( 188, 211, 1, 1); 
+	var w_material = new THREE.MeshBasicMaterial( { color: 0x6bc550, map: w_texture } );
 	w_material.transparent = true;
 	for ( var i = 0; i < 40; i ++ ) {
-		var w_geometry = new THREE.SphereGeometry( Math.random() * 40 + 20, 8, 8 );
-		var wood = new THREE.Mesh( w_geometry, w_material );
+		//var w_geometry = new THREE.SphereGeometry( Math.random() * 40 + 20, 8, 8 );
+		wood = new THREE.Mesh( w_geometry, w_material );
 		var rad = degree * Math.PI / 180;
 		var y = raidus * Math.sin( rad );
 		var z = raidus * Math.cos( rad );
@@ -48,13 +48,13 @@ function init() {
 		degree += 10;
 	}
 	for ( var i = 0; i < 40; i ++ ) {
-		var w_geometry = new THREE.SphereGeometry( Math.random() * 40 + 20, 8, 8 );
-		var wood = new THREE.Mesh( w_geometry, w_material );
+		//var w_geometry = new THREE.SphereGeometry( Math.random() * 40 + 20, 8, 8 );
+		wood = new THREE.Mesh( w_geometry, w_material );
 		var rad = degree * Math.PI / 180;
 		var y = raidus * Math.sin( rad );
 		var z = raidus * Math.cos( rad );
-		wood.position.set( -200, y, z);
-		earth.add(wood);
+		wood.position.set( -200, y, z );
+		earth.add( wood );
 		degree += 10;
 	}
 	group.add( earth );
@@ -136,6 +136,9 @@ function render() {
 
 	if ( update ) {
 		earth.rotation.x += 0.005;
+		for (var i = 1; i < 81; i ++ ){
+			earth.children[i].rotation.x -= 0.005;
+		}
 	};
 
 	if ( ex_update ) {
@@ -150,10 +153,10 @@ function render() {
 
 	if ( g_update ) {
 		goal.position.y += 15;
-		if ( goal.position.y === 400 ) {
+		if ( goal.position.y > 400 ) {
 			g_update = false;
 			displayGoal();
-			goal.position.y = -200;
+			goal.position.y = -300;
 		};
 	};
 

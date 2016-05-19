@@ -8,6 +8,7 @@ function init() {
 	group = new THREE.Group();
 	exclamation = new THREE.Group();
 	goal = new THREE.Group();
+	earth = new THREE.Group();
 	cloud = new THREE.Group();
 
 	// camera
@@ -25,8 +26,20 @@ function init() {
 	var e_geometry = new THREE.SphereGeometry( 500, 32, 32 );
 	var e_material = new THREE.MeshLambertMaterial( { color: 0x69f0ae , map: e_texture } );
 	e_material.transparent = true;
-	earth = new THREE.Mesh( e_geometry, e_material );
-	earth.rotation.set( Math.PI/2, 0, Math.PI/2 );
+	e_sphere = new THREE.Mesh( e_geometry, e_material );
+	e_sphere.rotation.set( Math.PI/2, 0, Math.PI/2 );
+
+	earth.add( e_sphere );
+
+	var w_texture = loader.load( 'images/wood.png' );
+	var w_geometry = new THREE.PlaneGeometry( 188, 211, 1, 1);
+	var w_material = new THREE.MeshBasicMaterial( { color: 0xffffff , map: w_texture } );
+	w_material.transparent = true;
+	var wood = new THREE.Mesh( w_geometry, w_material );
+	wood.position.x = 100;
+	wood.position.y = 600;
+	wood.rotation.set(0,0,50);
+	earth.add(wood);
 	group.add( earth );
 
 	// car
@@ -48,7 +61,7 @@ function init() {
 		var cl = new THREE.Mesh( cl_geometry, cl_material );
 		cl.position.x = Math.random() * 2000 - 1000;
 		cl.position.y = Math.random() * 50 + 600;
-		cl.position.z = Math.random() * 800 - 400;
+		cl.position.z = Math.random() * 800 - 800;
 		cloud.add(cl);
 	}
 
@@ -73,9 +86,10 @@ function init() {
 
 	group.add( exclamation );
 
+	// goal
 	for ( var i = 0; i < 20; i ++) {
-		var g_geometry = new THREE.SphereGeometry(10 , 8, 8 );
-		var g_material = new THREE.MeshLambertMaterial( { color: 0x20b2aa } );
+		var g_geometry = new THREE.SphereGeometry( Math.random() * 20 + 5 , 8, 8 );
+		var g_material = new THREE.MeshLambertMaterial( { color: 0xffc184 } );
 		var g_mesh = new THREE.Mesh( g_geometry, g_material );
 		g_mesh.position.x = Math.random() * 500 - 250;
 		g_mesh.position.y = Math.random() * 100 + 400;
@@ -84,7 +98,7 @@ function init() {
 	}
 
 	group.add( goal );
-	goal.position.y = -200;
+	goal.position.y = -300;
 
 	var light = new THREE.AmbientLight ( 0xffffff, 1 ); //DirectionalLight
 	light.position.set( 0, 100, 30 );

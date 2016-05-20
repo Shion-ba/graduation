@@ -1,6 +1,6 @@
 var windowWidth = $( window ).width();
 var windowHeight = $( window ).height();
-var scene, camera, renderer, group, cloud, earth, wood, exclamation,lengthBall,sparks;
+var scene, camera, renderer, group, cloud, earth, wood, exclamation,lengthBall,sparks,fireworks;
 var scale = 0.1;
 
 function init() {
@@ -12,7 +12,7 @@ function init() {
 	cloud = new THREE.Group();
 	fireworks = new THREE.Group();
 
-	// camera
+ 	// camera
 	var fov = 75;
 	var aspect = windowWidth / windowHeight;
 	var near = 1;
@@ -107,31 +107,23 @@ function init() {
 	var fw_geometry = new THREE.PlaneGeometry(400,400,1,1);
 	var fw_material = new THREE.MeshBasicMaterial({color:0xffffff,map:fw_texture});
 	fw_material.transparent = true;
-	sparks = new THREE.Mesh(fw_geometry,fw_material);
-	fireworks.add(sparks);
 
 	var fw_raidus = 10;
 	var geometry = new THREE.SphereGeometry(3);
-	var material = new THREE.MeshBasicMaterial({color:0xe579c3});
-	lengthBall = new THREE.Mesh(geometry,material);
-	lengthBall.position.y = 0;
-	fireworks.add(lengthBall);
+	var material = new THREE.MeshBasicMaterial({color:0xd882a7});
 
-	// var fw_degree = 0;
-	// var sparks_geometry = new THREE.SphereGeometry(2);
-	// var sparks_material = new THREE.MeshBasicMaterial({color:0x0000ff});
+	for(var i = 0; i < 4; i++){
 
-	// for (var i = 0; i < 4; i++){	
-	// 	sparks = new THREE.Mesh(sparks_geometry,sparks_material);
-	// 	var fw_rad = fw_degree * Math.PI / 180;
-	// 	var sparksX = fw_raidus * Math.cos(fw_rad);
-	// 	var sparksY = fw_raidus * Math.sin(fw_rad);
-	// 	sparks.position.set(sparksX,sparksY,0);
-	// 	fireworks.add(sparks);
-	// 	fw_degree += 90;
-	// }
-	// fireworks.position.y = 600;
-	sparks.scale.set(0.1,0.1,0.1);
+		var pX = Math.random()*500 - 250;
+		sparks = new THREE.Mesh(fw_geometry,fw_material);
+		sparks.position.x = pX;
+		fireworks.add(sparks);
+		lengthBall = new THREE.Mesh(geometry,material);
+		lengthBall.position.x = pX;
+		fireworks.add(lengthBall);
+		sparks.scale.set(0.1,0.1,0.1);
+
+	}
 
 	group.add(fireworks);
 
@@ -175,7 +167,10 @@ function render() {
 	if (g_update) {
 		fireworks.position.y += 15;
 		if (fireworks.position.y > 600 ) {
-			sparks.scale.set(scale,scale,scale);	
+			for (var i = 0; i < 8; i+=2){
+				fireworks.children[i].scale.set(scale,scale,scale);
+			}
+
 			fireworks.position.y = 600;
 			if (scale > 1) {
 				g_update =false;

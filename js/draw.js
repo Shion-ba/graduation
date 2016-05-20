@@ -23,7 +23,7 @@ function init() {
 	// earth
 	var raidus = 450;
 	var loader = new THREE.TextureLoader();
-  var e_texture = loader.load( 'images/texture.png' );
+	var e_texture = loader.load( 'images/texture.png' );
 	var e_geometry = new THREE.SphereGeometry( 500, 32, 32 );
 	var e_material = new THREE.MeshLambertMaterial( { color: 0x69f0ae , map: e_texture } );
 	e_material.transparent = true;
@@ -122,13 +122,13 @@ function init() {
 	group.add( light );
 
 	renderer = new THREE.WebGLRenderer();
-  renderer.setSize( windowWidth, windowHeight );
-  renderer.setClearColor( new THREE.Color(0x3bdae2) );
-  $( '#main' ).append( renderer.domElement );
+  	renderer.setSize( windowWidth, windowHeight );
+  	renderer.setClearColor( new THREE.Color(0x3bdae2) );
+  	$( '#main' ).append( renderer.domElement );
 
-  scene.add(group);
+  	scene.add(group);
 
-  renderer.render( scene, camera );
+  	renderer.render( scene, camera );
 }
 
 function render() {

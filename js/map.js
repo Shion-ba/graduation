@@ -110,6 +110,7 @@ function spot ( mass ) {
 
 function goalEvent() {
 	g_update = true;
+	
 }
 
 function displaySpotModal( spot ) {

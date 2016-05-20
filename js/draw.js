@@ -1,15 +1,16 @@
 var windowWidth = $( window ).width();
 var windowHeight = $( window ).height();
-var scene, camera, renderer, group, cloud, earth, wood, exclamation, goal;
+var scene, camera, renderer, group, cloud, earth, wood, exclamation,lengthBall,sparks;
+var scale = 0.1;
 
 function init() {
 	// scene
 	scene = new THREE.Scene();
 	group = new THREE.Group();
 	exclamation = new THREE.Group();
-	goal = new THREE.Group();
 	earth = new THREE.Group();
 	cloud = new THREE.Group();
+	fireworks = new THREE.Group();
 
 	// camera
 	var fov = 75;
@@ -101,19 +102,41 @@ function init() {
 
 	group.add( exclamation );
 
-	// goal
-	for ( var i = 0; i < 20; i ++) {
-		var g_geometry = new THREE.SphereGeometry( Math.random() * 20 + 5 , 8, 8 );
-		var g_material = new THREE.MeshLambertMaterial( { color: 0xffc184 } );
-		var g_mesh = new THREE.Mesh( g_geometry, g_material );
-		g_mesh.position.x = Math.random() * 500 - 250;
-		g_mesh.position.y = Math.random() * 100 + 400;
-		g_mesh.position.z = Math.random() * 400;
-		goal.add( g_mesh );
-	}
+	//goal_anime
+	var fw_texture = loader.load("images/fireworks.png");
+	var fw_geometry = new THREE.PlaneGeometry(400,400,1,1);
+	var fw_material = new THREE.MeshBasicMaterial({color:0xffffff,map:fw_texture});
+	fw_material.transparent = true;
+	sparks = new THREE.Mesh(fw_geometry,fw_material);
+	fireworks.add(sparks);
 
-	group.add( goal );
-	goal.position.y = -300;
+	var fw_raidus = 10;
+	var geometry = new THREE.SphereGeometry(3);
+	var material = new THREE.MeshBasicMaterial({color:0xe579c3});
+	lengthBall = new THREE.Mesh(geometry,material);
+	lengthBall.position.y = 0;
+	fireworks.add(lengthBall);
+
+	// var fw_degree = 0;
+	// var sparks_geometry = new THREE.SphereGeometry(2);
+	// var sparks_material = new THREE.MeshBasicMaterial({color:0x0000ff});
+
+	// for (var i = 0; i < 4; i++){	
+	// 	sparks = new THREE.Mesh(sparks_geometry,sparks_material);
+	// 	var fw_rad = fw_degree * Math.PI / 180;
+	// 	var sparksX = fw_raidus * Math.cos(fw_rad);
+	// 	var sparksY = fw_raidus * Math.sin(fw_rad);
+	// 	sparks.position.set(sparksX,sparksY,0);
+	// 	fireworks.add(sparks);
+	// 	fw_degree += 90;
+	// }
+	// fireworks.position.y = 600;
+	sparks.scale.set(0.1,0.1,0.1);
+
+	group.add(fireworks);
+
+
+
 
 	var light = new THREE.AmbientLight ( 0xffffff, 1 ); //DirectionalLight
 	light.position.set( 0, 100, 30 );
@@ -149,14 +172,18 @@ function render() {
 		};
 	};
 
-	if ( g_update ) {
-		goal.position.y += 15;
-		if ( goal.position.y > 400 ) {
-			g_update = false;
-			displayGoal();
-			goal.position.y = -300;
-		};
-	};
+	if (g_update) {
+		fireworks.position.y += 15;
+		if (fireworks.position.y > 600 ) {
+			sparks.scale.set(scale,scale,scale);	
+			fireworks.position.y = 600;
+			if (scale > 1) {
+				g_update =false;
+				displayGoal();
+			}
+		scale += 0.1;
+		}
+	}
 
 	renderer.render( scene, camera );
 }
